@@ -1,9 +1,9 @@
-import Baloon from "./components/Baloon";
+import Balloon from "./components/Balloon";
 
 function App() {
   return (
     <div className="App">
-      <Baloon></Baloon>
+      <Balloon></Balloon>
     </div>
   );
 }

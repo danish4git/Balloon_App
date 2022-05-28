@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./baloon.css";
 import styled from "styled-components";
 
-const Baloon = () => {
+const Balloon = () => {
   const [input, setInput] = useState(0);
   const [cir1, setCir1] = useState("block");
   const [cir2, setCir2] = useState("block");
@@ -112,28 +112,32 @@ const Baloon = () => {
   return (
     <div>
       <div className="inputdiv">
-        <input type="number" onChange={(e) => setInput(e.target.value)} />
+        <input
+          type="number"
+          placeholder="type balloon number.."
+          onChange={(e) => setInput(e.target.value)}
+        />
         <button onClick={() => inputHandler()}>Shoot</button>
       </div>
-      <h1>{input}</h1>
+
       <div className="container">
         <div className="boxdiv">
-          <Circlediv11 onClick={() => reversehandler(1)}>1</Circlediv11>
-          <Circlediv22 onClick={() => reversehandler(2)}>2</Circlediv22>
-          <Circlediv33 onClick={() => reversehandler(3)}>3</Circlediv33>
-          <Circlediv44 onClick={() => reversehandler(4)}>4</Circlediv44>
-          <Circlediv55 onClick={() => reversehandler(5)}>5</Circlediv55>
+          <Circlediv11 onClick={() => reversehandler(1)}></Circlediv11>
+          <Circlediv22 onClick={() => reversehandler(2)}></Circlediv22>
+          <Circlediv33 onClick={() => reversehandler(3)}></Circlediv33>
+          <Circlediv44 onClick={() => reversehandler(4)}></Circlediv44>
+          <Circlediv55 onClick={() => reversehandler(5)}></Circlediv55>
         </div>
         <div className="circle_main_div">
-          <Circlediv1>1</Circlediv1>
-          <Circlediv2>2</Circlediv2>
-          <Circlediv3>3</Circlediv3>
-          <Circlediv4>4</Circlediv4>
-          <Circlediv5>5</Circlediv5>
+          <Circlediv1></Circlediv1>
+          <Circlediv2></Circlediv2>
+          <Circlediv3></Circlediv3>
+          <Circlediv4></Circlediv4>
+          <Circlediv5></Circlediv5>
         </div>
       </div>
     </div>
   );
 };
 
-export default Baloon;
+export default Balloon;
