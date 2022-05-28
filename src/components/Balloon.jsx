@@ -4,108 +4,94 @@ import styled from "styled-components";
 
 const Balloon = () => {
   const [input, setInput] = useState(0);
-  const [cir1, setCir1] = useState("block");
-  const [cir2, setCir2] = useState("block");
-  const [cir3, setCir3] = useState("block");
-  const [cir4, setCir4] = useState("block");
-  const [cir5, setCir5] = useState("block");
-  const [cir11, setCir11] = useState("none");
-  const [cir22, setCir22] = useState("none");
-  const [cir33, setCir33] = useState("none");
-  const [cir44, setCir44] = useState("none");
-  const [cir55, setCir55] = useState("none");
+  const [cir1, setCir1] = useState(true);
+  const [cir2, setCir2] = useState(true);
+  const [cir3, setCir3] = useState(true);
+  const [cir4, setCir4] = useState(true);
+  const [cir5, setCir5] = useState(true);
+
   //////right div////////
   const Circlediv1 = styled.div`
     background-color: #d5e8d4;
     border: 2px solid #c1d4bb;
-    display: ${cir1};
+    display: ${cir1 ? "block" : "none"};
   `;
   const Circlediv2 = styled.div`
     background-color: #ffe6cd;
     border: 2px solid #c9b378;
-    display: ${cir2};
+    display: ${cir2 ? "block" : "none"};
   `;
   const Circlediv3 = styled.div`
     background-color: #6a00ff;
     border: 2px solid #804dc6;
-    display: ${cir3};
+    display: ${cir3 ? "block" : "none"};
   `;
   const Circlediv4 = styled.div`
     background-color: #d9e8fb;
     border: 2px solid #b0bdcd;
-    display: ${cir4};
+    display: ${cir4 ? "block" : "none"};
   `;
   const Circlediv5 = styled.div`
     background-color: #e2d5e7;
     border: 2px solid #c9bccd;
-    display: ${cir5};
+    display: ${cir5 ? "block" : "none"};
   `;
 
   //////left div////////
   const Circlediv11 = styled.div`
     background-color: #d5e8d4;
     border: 2px solid #c1d4bb;
-    display: ${cir11};
+    display: ${cir1 ? "none" : "block"};
   `;
   const Circlediv22 = styled.div`
     background-color: #ffe6cd;
     border: 2px solid #c9b378;
-    display: ${cir22};
+    display: ${cir2 ? "none" : "block"};
   `;
   const Circlediv33 = styled.div`
     background-color: #6a00ff;
     border: 2px solid #804dc6;
-    display: ${cir33};
+    display: ${cir3 ? "none" : "block"};
   `;
   const Circlediv44 = styled.div`
     background-color: #d9e8fb;
     border: 2px solid #b0bdcd;
-    display: ${cir44};
+    display: ${cir4 ? "none" : "block"};
   `;
   const Circlediv55 = styled.div`
     background-color: #e2d5e7;
     border: 2px solid #c9bccd;
-    display: ${cir55};
+    display: ${cir5 ? "none" : "block"};
   `;
 
   const inputHandler = () => {
     console.log(input);
 
     if (input == 1) {
-      setCir1("none");
-      setCir11("block");
+      setCir1(false);
     } else if (input == 2) {
-      setCir2("none");
-      setCir22("block");
+      setCir2(false);
     } else if (input == 3) {
-      setCir3("none");
-      setCir33("block");
+      setCir3(false);
     } else if (input == 4) {
-      setCir4("none");
-      setCir44("block");
+      setCir4(false);
     } else if (input == 5) {
-      setCir5("none");
-      setCir55("block");
+      setCir5(false);
     }
   };
 
   const reversehandler = (value) => {
     console.log("hi");
     if (value == 1) {
-      setCir11("none");
-      setCir1("block");
+      setCir1(true);
     } else if (value == 2) {
-      setCir22("none");
-      setCir2("block");
+      setCir2(true);
     } else if (value == 3) {
-      setCir33("none");
-      setCir3("block");
+      setCir3(true);
     } else if (value == 4) {
-      setCir44("none");
-      setCir4("block");
+      setCir4(true);
     } else if (value == 5) {
-      setCir55("none");
-      setCir5("block");
+      setCir5(true);
     }
   };
 
