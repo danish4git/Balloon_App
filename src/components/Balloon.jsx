@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./baloon.css";
 import styled from "styled-components";
 
@@ -9,58 +9,49 @@ const Balloon = () => {
   const [cir3, setCir3] = useState(true);
   const [cir4, setCir4] = useState(true);
   const [cir5, setCir5] = useState(true);
+  const [colorsArray, setcolorsArray] = useState([]);
 
   //////right div////////
   const Circlediv1 = styled.div`
-    background-color: #d5e8d4;
-    border: 2px solid #c1d4bb;
+    background-color: ${colorsArray[0]};
     display: ${cir1 ? "block" : "none"};
   `;
   const Circlediv2 = styled.div`
-    background-color: #ffe6cd;
-    border: 2px solid #c9b378;
+    background-color: ${colorsArray[1]};
     display: ${cir2 ? "block" : "none"};
   `;
   const Circlediv3 = styled.div`
-    background-color: #6a00ff;
-    border: 2px solid #804dc6;
+    background-color: ${colorsArray[2]};
     display: ${cir3 ? "block" : "none"};
   `;
   const Circlediv4 = styled.div`
-    background-color: #d9e8fb;
-    border: 2px solid #b0bdcd;
+    background-color: ${colorsArray[3]};
     display: ${cir4 ? "block" : "none"};
   `;
   const Circlediv5 = styled.div`
-    background-color: #e2d5e7;
-    border: 2px solid #c9bccd;
+    background-color: ${colorsArray[4]};
     display: ${cir5 ? "block" : "none"};
   `;
 
   //////left div////////
   const Circlediv11 = styled.div`
-    background-color: #d5e8d4;
-    border: 2px solid #c1d4bb;
+    background-color: ${colorsArray[0]};
     display: ${cir1 ? "none" : "block"};
   `;
   const Circlediv22 = styled.div`
-    background-color: #ffe6cd;
-    border: 2px solid #c9b378;
+    background-color: ${colorsArray[1]};
     display: ${cir2 ? "none" : "block"};
   `;
   const Circlediv33 = styled.div`
-    background-color: #6a00ff;
-    border: 2px solid #804dc6;
+    background-color: ${colorsArray[2]};
     display: ${cir3 ? "none" : "block"};
   `;
   const Circlediv44 = styled.div`
-    background-color: #d9e8fb;
-    border: 2px solid #b0bdcd;
+    background-color: ${colorsArray[3]};
     display: ${cir4 ? "none" : "block"};
   `;
   const Circlediv55 = styled.div`
-    background-color: #e2d5e7;
-    border: 2px solid #c9bccd;
+    background-color: ${colorsArray[4]};
     display: ${cir5 ? "none" : "block"};
   `;
 
@@ -94,6 +85,24 @@ const Balloon = () => {
       setCir5(true);
     }
   };
+
+  //////with any random color generator ////////
+  const rcol = () => {
+    for (let i = 0; i < 5; i++) {
+      let col =
+        "#" +
+        Math.floor(Math.random() * 16777215)
+          .toString(16)
+          .padStart(6, "0")
+          .toUpperCase();
+      setcolorsArray((item) => [...item, col]);
+      console.log(colorsArray);
+    }
+  };
+
+  useEffect(() => {
+    rcol();
+  }, []);
 
   return (
     <div>
