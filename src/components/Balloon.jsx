@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
-import "./baloon.css";
+import "./balloon.css";
 import styled from "styled-components";
 
 const Balloon = () => {
+  let colors = ["#d5e8d4", "#ffe6cd", "#6a00ff", "#d9e8fb", "#e2d5e7"];
+  let randomColor = colors.sort((a, b) => 0.5 - Math.random());
   const [input, setInput] = useState(0);
   const [cir1, setCir1] = useState(true);
   const [cir2, setCir2] = useState(true);
   const [cir3, setCir3] = useState(true);
   const [cir4, setCir4] = useState(true);
   const [cir5, setCir5] = useState(true);
-  const [colorsArray, setcolorsArray] = useState([]);
+  const [colorsArray, setcolorsArray] = useState(randomColor);
 
-  //////right div////////
   const Circlediv1 = styled.div`
     background-color: ${colorsArray[0]};
     display: ${cir1 ? "block" : "none"};
@@ -85,24 +86,6 @@ const Balloon = () => {
       setCir5(true);
     }
   };
-
-  //////with any random color generator ////////
-  const rcol = () => {
-    for (let i = 0; i < 5; i++) {
-      let col =
-        "#" +
-        Math.floor(Math.random() * 16777215)
-          .toString(16)
-          .padStart(6, "0")
-          .toUpperCase();
-      setcolorsArray((item) => [...item, col]);
-      console.log(colorsArray);
-    }
-  };
-
-  useEffect(() => {
-    rcol();
-  }, []);
 
   return (
     <div>
